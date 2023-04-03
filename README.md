@@ -43,7 +43,12 @@ The **AllowOverride** directives, when set to **AuthConfig**,  will turn on *.ht
 ### **5. Create the .htaccess files**
 Copy the *.htaccess* files in the */var/www/basic/* and */var/www/digest* folders.
 
-### **6. Create the password files**
+### **6. Enable HTTP Auth Digest**
+Run the command:
+
+    $sudo a2enmod auth_digest
+
+### **7. Create the password files**
 Run the commands
 
     $sudo htpasswd -c /etc/apache2/.htpasswd myuser
@@ -54,7 +59,7 @@ and insert the password for the user (in the example it's **mypass2**)
 
 These will create the *.htpasswd* and the *.htdigest* files which will contain the credentials of the users registered to the basic and digest websites respectively.
 
-### **7. Restart Apache2**
+### **8. Restart Apache2**
 Run the command:
 
     $sudo service apache2 restart
